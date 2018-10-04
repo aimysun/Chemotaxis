@@ -8,7 +8,7 @@ Bacteria[] bob;
  }   
  void draw()   
  {    
- 	background(random(255), random(255), random(255));
+ 	background(175);
  	for(int i=0; i < bob.length; i++){
  		bob[i].show();
  		bob[i].walk ();
@@ -17,8 +17,10 @@ Bacteria[] bob;
  class Bacteria    
  {     
  	int myX, myY;
+ 	int myColor;
  	Bacteria(){
  		myX = myY = 250;
+ 		myColor = color(random(255), random(255), random(255));
  	}  
 
  	void walk(){
@@ -27,6 +29,7 @@ Bacteria[] bob;
  	}
 
  	void show(){
- 		ellipse(myX, myY, 30, 30);
+ 		fill(myColor);
+	    rect(myX, myY, 15, 15, 5);
  	}
  }    
